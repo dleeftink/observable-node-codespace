@@ -25,7 +25,7 @@ If updates stop being reflected in the preview pane, refresh the page. If update
 
 ## Create a new dashboard
 
-You can create new dashboards (sub-repositories) as follows:
+You can create new dashboards ('sub-repositories') as follows:
 
 1. Navigate to the `Terminal` and `cd` to the `/workspace/observable-codespace` directory if not already there.
 
