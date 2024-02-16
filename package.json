@@ -1,5 +1,12 @@
 {
   "dependencies": {
     "@observablehq/framework": "^1.0.0"
+  },
+
+  "scripts": {
+  
+    "obs": "npm run dev --prefix basic-template",
+    "pre":  "cd ./basic-template && npm run dev"
+
   }
 }
