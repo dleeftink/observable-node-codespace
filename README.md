@@ -20,3 +20,12 @@ You can edit the `index.md` contents, after which the content changes are reflec
 If updates stop being reflected in the preview pane, refresh the page. If updates aren't propagated after refreshing, execute `CTRL/CMD + C` in the terminal after which you can restart the live server using `npm run obs`.
 - If you accidentally close the preview pane, you can re-open this by navigating to the `Ports` tab on the bottom half of the screen and hovering the `Forwarded Address`. Click the `Preview in Editor` icon that shows on hover to re-open the preview inside your codespace.
 - For more information on getting started, visit the [Observable Framework Documentation](https://observablehq.com/framework/getting-started).
+
+## Create a new dashboard
+
+You can create new dashboards (sub-repositories) as follows:
+
+1. Navigate to the `Terminal` and `cd` to the `/workspace/observable-codespace` directory if not already there.
+2. Run the `npm init @observable` command.
+  - If this is your first time running this command, you will be prompted to install the `create` command. Type `y`.
+3. Follow the CLI to create the sub-reposistory and additional template files.
