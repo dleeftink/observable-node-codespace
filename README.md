@@ -2,7 +2,7 @@
 
 This repository contains the basic prerequisites to get started with Observable Framework on Github Codespaces.
 
-1. Sign in to GitHub.com, if you haven't already done so.
+1. Sign in to your GitHub account.
 2. Go to https://github.com/dleeftink/observable-codespace (this repository).
 3. Select `Use this template` > `Open in a codespace`.
 
