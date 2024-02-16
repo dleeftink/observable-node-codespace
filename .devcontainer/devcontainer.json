@@ -10,7 +10,6 @@
 {
 	
 	"name": "Node.js",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/jshint:2": {}
@@ -26,10 +25,7 @@
 		}
 	  },
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [3000],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
 
 	"waitFor": "onCreateCommand",
 	"updateContentCommand": "npm install",
@@ -37,13 +33,13 @@
 	"postAttachCommand": {
 	  "server": "npm run obs"
 	},
-
-	// Configure tool-specific properties.
+	
 	"customizations": {
 		"codespaces": {
 		  "openFiles": ["basic-template/docs/index.md"]
 		}
 	}
+	
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 
