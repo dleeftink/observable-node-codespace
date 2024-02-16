@@ -26,11 +26,20 @@
 	"forwardPorts": [3000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm install"
+
+	"waitFor": "onCreateCommand",
+	"updateContentCommand": "npm install",
+	//"postCreateCommand": "npm install",
+	"postAttachCommand": {
+	  "server": "npm run obs"
+	},
 
 	// Configure tool-specific properties.
-	// "customizations": {},
-
+	"customizations": {
+		"codespaces": {
+		  "openFiles": ["basic-template/index.md"]
+		}
+	}
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 
