@@ -2,6 +2,8 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 // https://containers.dev/implementors/json_reference/
 // https://blog.siliconvalve.com/posts/2023/08/08/using-dev-containers-to-build-a-transportable-blog-writing-environment
+// https://code.visualstudio.com/remote/advancedcontainers/start-processes
+
 
 {
 	
@@ -37,7 +39,7 @@
 	// Configure tool-specific properties.
 	"customizations": {
 		"codespaces": {
-		  "openFiles": ["basic-template/index.md"]
+		  "openFiles": ["basic-template/docs/index.md"]
 		}
 	}
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
