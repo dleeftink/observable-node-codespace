@@ -5,6 +5,7 @@
 // https://code.visualstudio.com/remote/advancedcontainers/start-processes
 // https://github.com/orgs/community/discussions/9644#discussioncomment-2702122 | setting custom start-up message
 // https://github.com/orgs/community/discussions/43534 | custom start-up message
+// https://github.com/orgs/community/discussions/4068 | default public ports
 
 {
 	
