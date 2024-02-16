@@ -1,6 +1,8 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 // https://containers.dev/implementors/json_reference/
+// https://blog.siliconvalve.com/posts/2023/08/08/using-dev-containers-to-build-a-transportable-blog-writing-environment
+
 {
 	
 	"name": "Node.js",
@@ -12,6 +14,13 @@
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
+
+	"portsAttributes": {
+		"3000": {
+		  "label": "Live preview",
+		  "onAutoForward": "openPreview"
+		}
+	  },
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [3000],

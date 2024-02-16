@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Run server",
+        "type": "node",
+        "request": "launch",
+        "cwd": "./basic-template",
+        "console": "integratedTerminal",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["run", "dev"],
+        "skipFiles": ["<node_internals>/**"]
+      }
+    ]
+  }
