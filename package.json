@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@observablehq/framework": "^1.0.0"
+  }
+}
