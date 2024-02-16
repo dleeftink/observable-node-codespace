@@ -15,7 +15,7 @@
 	"forwardPorts": [3000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "cd ./basic-template"
+	"postCreateCommand": "npm install && npm run obs"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
