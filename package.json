@@ -5,8 +5,8 @@
 
   "scripts": {
   
-    "obs": "npm run dev --prefix basic-template",
-    "pre":  "cd basic-template && npm run dev"
+    "postinstall": "npm run obs",
+    "obs": "npm run dev --prefix basic-template"   
 
   }
 }
