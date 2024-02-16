@@ -14,5 +14,8 @@ Wait for the codespace to be built and the setup scripts to finish running (this
 
 After succesfully setting up the environment, codespaces should
 automatically open `index.md` to the left and a preview pane to the right.
+- Additionally, a popup might open asking you to trust the live server destination.
 
 You can edit the `index.md` contents, after which the content changes are reflected (with a slight delay) in the preview pane.
+
+If updates stop being reflected in the preview pane, refresh the page. If even after refreshing, updates aren't propagated, execute `CTRL + C` in the terminal window after which you can restart the dev server using `npm run obs`.
