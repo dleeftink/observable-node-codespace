@@ -1,4 +1,4 @@
-# Observable Codespaces starter
+# Observable Codespace Node starter
 
 This repository contains the basic prerequisites to get started with Observable Framework on Github Codespaces.
 
