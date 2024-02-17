@@ -27,7 +27,7 @@ If updates stop being reflected in the preview pane, refresh the page. If update
 
 You can create new dashboards ('sub-repositories') as follows:
 
-1. Navigate to the `Terminal` tab and `cd` to the `/workspace/observable-codespace` directory if not already there.
+1. Locate to the `Terminal` tab and `cd` to the `/workspace/observable-codespace` directory if not already there.
 
 2. Run the `npm init @observable` command.
     - If this is your first time running this command, you will be prompted to install `create`. Type `y`.
