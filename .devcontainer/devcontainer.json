@@ -30,7 +30,7 @@
 	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
 	"waitFor": "onCreateCommand",
 	"updateContentCommand": "npm install",
-	"postCreateCommand": "cd basic-template && npm install",
+	// "postCreateCommand": "cd basic-template && npm install",
 	"postAttachCommand": {
 	  "server": "npm run obs"
 	},
