@@ -5,7 +5,7 @@
 
   "scripts": {
 
-    "postinstall": "npm install --prefix basic-template"
+    "postinstall": "npm install --prefix basic-template",
     "obs": "npm run dev --prefix basic-template"   
 
   }
