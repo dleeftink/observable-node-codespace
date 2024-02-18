@@ -16,7 +16,6 @@
   "onCreateCommand": "echo 'Please wait for live pane ...' | sudo tee /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
   "updateContentCommand": "if [ ! -d \"/workspaces/codespaces-blank/basic-template\" ]; then \n mv .devcontainer .. && git clone https://github.com/dleeftink/observable-node-codespace.git . && rm -rf .devcontainer && git clean -f -f &&  mv ../.devcontainer . && exit  0 \nfi",
 //"updateContentCommand" : "source_dir=\"$PWD\" && \\\n target_dir=\"/tmp/ldf_dir\" && \\\n mkdir -p \"$target_dir\" && \\\n mv \"$source_dir\"/{,.}* \"$target_dir\" 2>/dev/null ; \\\n git clone https://github.com/dleeftink/observable-node-codespace.git \"$source_dir\"/. && \\\n rm -rf .devcontainer ; \\\n mv \"$target_dir\"/{,.}* \"$source_dir\" 2>/dev/null ; \\\n rmdir \"$target_dir\"",
-
   "waitFor": "updateContentCommand",
   "postCreateCommand": "npm install",
   "postAttachCommand": {
