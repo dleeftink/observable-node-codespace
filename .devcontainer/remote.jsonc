@@ -2,7 +2,7 @@
 
 {
   "name": "Observable Framework remote image",
-  "image": "suptext/observable-node-image:0.1.1"
+  "image": "suptext/observable-node-image:0.1.1",
 
   "postStartCommand": {
     "server": "code -r -g basic-template/docs/index.md:1 && npm run obs"
