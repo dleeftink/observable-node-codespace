@@ -1,29 +1,35 @@
 {
-
   "name": "Observable Framework remote image",
   "image": "suptext/observable-node-image:0.1.0",
 
-
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/bash-command:1": {
+      "command": "nmv .devcontainer  .. && git clone https://github.com/dleeftink/observable-node-codespace.git . ; \\\nrm -rf .devcontainer && git clean -f -f && mv ../.devcontainer ."
+    }
+  },
 
   "portsAttributes": {
-		"3000": {
-		  "label": "Live preview",
-		  "onAutoForward": "openPreview"
-		  }
-	},
+    "3000": {
+      "label": "Live preview",
+      "onAutoForward": "openPreview"
+    }
+  },
 
-	"forwardPorts": [3000],
+  "forwardPorts": [
+    3000
+  ],
 
-	"onCreateCommand": "echo 'Please wait for live preview pane ...' | sudo tee -a cp /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
+  "onCreateCommand": "echo 'Please wait for live preview pane ...' | sudo tee -a cp /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
+  "postAttachCommand": {
+    "server": "npm run obs"
+  },
 
-	"postAttachCommand": {
-	  "server": "npm run obs"
-	},
-	
-	"customizations": {
-		"codespaces": {
-		  "openFiles": ["basic-template/docs/index.md"]
-		}
-	}
-  
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "basic-template/docs/index.md"
+      ]
+    }
+  }
+
 }
