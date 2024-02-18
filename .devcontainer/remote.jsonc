@@ -1,6 +1,29 @@
 {
 
   "name": "Observable Framework remote image",
-  "image": "suptext/observable-node-image:0.1.0"
+  "image": "suptext/observable-node-image:0.1.0",
+
+
+
+  "portsAttributes": {
+		"3000": {
+		  "label": "Live preview",
+		  "onAutoForward": "openPreview"
+		  }
+	},
+
+	"forwardPorts": [3000],
+
+	"onCreateCommand": "echo 'Please wait for live preview pane ...' | sudo tee -a cp /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
+
+	"postAttachCommand": {
+	  "server": "npm run obs"
+	},
+	
+	"customizations": {
+		"codespaces": {
+		  "openFiles": ["basic-template/docs/index.md"]
+		}
+	}
   
 }
