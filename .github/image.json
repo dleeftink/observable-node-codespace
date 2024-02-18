@@ -1,0 +1,27 @@
+{
+	"name": "Observable Framework Node starter",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+	"portsAttributes": {
+	  "3000": {
+		"label": "Live preview",
+		"onAutoForward": "openPreview"
+	  }
+	},
+	"forwardPorts": [
+	  3000
+	],
+	"onCreateCommand": "echo 'Please wait for live pane ...' | sudo tee /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
+	"updateContentCommand": "mv .devcontainer .. && git clone https://github.com/dleeftink/observable-node-codespace.git . && rm -rf .devcontainer && git clean -f -f &&  mv ../.devcontainer .",
+	"waitFor": "updateContentCommand",
+	"postCreateCommand": "npm install",
+	"postAttachCommand": {
+	  "server": "code -r -g basic-template/docs/index.md:1 && npm run obs"
+	},
+	"customizations": {
+	  "codespaces": {
+		"openFiles": [
+		  "basic-template/docs/index.md"
+		]
+	  }
+	}
+}
