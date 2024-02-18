@@ -1,0 +1,45 @@
+{
+	
+	"name": "Observable Framework Node starter",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+	"features": {
+		//"ghcr.io/devcontainers-contrib/features/jshint:2": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+	},
+
+	"portsAttributes": {
+		"3000": {
+		  "label": "Live preview",
+		  "onAutoForward": "openPreview"
+		}
+	  },
+
+	"forwardPorts": [3000],
+
+	"onCreateCommand": "echo 'Please wait for live pane ...' | sudo tee /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
+
+	//"updateContentCommand": "TMPDIR=$(dirname $(mktemp tmp.XXXXXXXXXX -ut)) && echo \"$TMPDIR\"",
+	//"updateContentCommand" : "source_dir=\".\" && \\\n target_dir=\"/tmp/ldf_dir\" && \\\n mkdir -p \"$target_dir\" && \\\n mv \"$source_dir\"/{,.}* \"$target_dir\"",
+	"updateContentCommand": "mv .devcontainer .. && git clone https://github.com/dleeftink/observable-node-codespace.git . && rm -rf .devcontainer && git clean -f -f &&  mv ../.devcontainer .",
+	//"updateContentCommand" : "source_dir=\"$PWD\" && \\\n target_dir=\"/tmp/ldf_dir\" && \\\n mkdir -p \"$target_dir\" && \\\n mv \"$source_dir\"/{,.}* \"$target_dir\" 2>/dev/null ; \\\n git clone https://github.com/dleeftink/observable-node-codespace.git \"$source_dir\"/. && \\\n rm -rf .devcontainer ; \\\n mv \"$target_dir\"/{,.}* \"$source_dir\" 2>/dev/null ; \\\n rmdir \"$target_dir\"",
+	//"waitFor": "updateContentCommand",
+	"postCreateCommand": "npm install && npm install -g @devcontainers/cli",
+	"postAttachCommand": {
+	  "server": "code -r -g basic-template/docs/index.md:1 && npm run obs"
+	},
+	
+	"customizations": {
+		"codespaces": {
+		  "openFiles": ["basic-template/docs/index.md"]
+		},
+		"vscode": {
+			"extensions": [
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	}
+	
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+
+}
