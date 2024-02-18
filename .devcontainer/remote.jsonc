@@ -4,7 +4,11 @@
   "name": "Observable Framework remote image",
   "image": "suptext/observable-node-image:0.1.1"
 
-  /*"portsAttributes": {
+  "postStartCommand": {
+    "server": "code -r -g basic-template/docs/index.md:1 && npm run obs"
+  },
+
+  "portsAttributes": {
     "3000": {
       "label": "Live preview",
       "onAutoForward": "openPreview"
@@ -14,13 +18,6 @@
   "forwardPorts": [
     3000
   ],
-  
-  "initializeCommand": "mv .devcontainer  .. && git clone https://github.com/dleeftink/observable-node-codespace.git . && rm -rf .devcontainer && git clean -f -f &&  mv ../.devcontainer .",
-
-  "onCreateCommand": "echo 'Please wait for live preview pane ...' | sudo tee -a cp /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
-  "postAttachCommand": {
-    "server": "npm run obs"
-  },
 
   "customizations": {
     "codespaces": {
@@ -28,6 +25,6 @@
         "basic-template/docs/index.md"
       ]
     }
-  }*/
+  }
 
 }
