@@ -2,7 +2,7 @@
   "name": "Observable Framework remote image",
   "image": "suptext/observable-node-image:0.1.0",
 
-  "portsAttributes": {
+  /*"portsAttributes": {
     "3000": {
       "label": "Live preview",
       "onAutoForward": "openPreview"
@@ -26,6 +26,6 @@
         "basic-template/docs/index.md"
       ]
     }
-  }
+  }*/
 
 }
