@@ -4,9 +4,9 @@
   "name": "Observable Framework remote image",
   "image": "suptext/observable-node-image:0.1.1",
 
-  "postAttachCommand": {
-    "server": "code -r -g basic-template/docs/index.md:1 && npm run obs"
-  },
+  "forwardPorts": [
+    3000
+  ],
 
   "portsAttributes": {
     "3000": {
@@ -15,9 +15,9 @@
     }
   },
 
-  "forwardPorts": [
-    3000
-  ],
+  "postAttachCommand": {
+    "server": "code -r -g basic-template/docs/index.md:1 && npm run obs"
+  },
 
   "customizations": {
     "codespaces": {
