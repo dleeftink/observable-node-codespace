@@ -1,6 +1,9 @@
 {
   "name": "Observable Framework Alpine Node",
   "image": "mcr.microsoft.com/devcontainers/base:alpine-3.19",
+  "features": {
+    "ghcr.io/cirolosapio/devcontainers-features/alpine-node:0": {}
+  },
   "remoteEnv": {
     "target_repo": "https://github.com/dleeftink/observable-node-codespace.git"
   },
