@@ -24,5 +24,12 @@
   "postCreateCommand": "npm install",
   "postAttachCommand": {
     "server": "code -r -g basic-template/docs/index.md:1 && npm run obs"
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "basic-template/docs/index.md"
+      ]
+    }
   }
 }
