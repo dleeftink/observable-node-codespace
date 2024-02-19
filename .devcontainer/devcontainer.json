@@ -1,3 +1,5 @@
+// codespace devcontainer build from .github/devImage.jsonc
+
 {
   "name": "Observable Framework Alpine Node",
   "image": "mcr.microsoft.com/devcontainers/base:alpine-3.19",
