@@ -1,8 +1,15 @@
 {
-  "name": "Observable Framework Node image",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+  "name": "Light Node",
+  "image": "mcr.microsoft.com/devcontainers/base:alpine-3.19",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    "ghcr.io/cirolosapio/devcontainers-features/alpine-node:0": {
+      "globalPackages": "@devcontainers/cli"
+    },
+    "ghcr.io/cirolosapio/devcontainers-features/alpine-docker-outside-of-docker:0": {}
+  },
+  "remoteUser": "root", // run as root when creating image in case of d-o-d
+  "remoteEnv": {
+    "target_repo": "https://github.com/dleeftink/observable-node-codespace.git"
   },
   "forwardPorts": [
     3000
@@ -14,26 +21,17 @@
     }
   },
   "onCreateCommand": "echo 'Please wait for live pane ...' | sudo tee /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
-//"updateContentCommand": "if [ ! -d \"/workspaces/codespaces-blank/basic-template\" ]; then \n mv .devcontainer .. && git clone https://github.com/dleeftink/observable-node-codespace.git . && rm -rf .devcontainer && git clean -f -f &&  mv ../.devcontainer . && exit  0 \nfi",
-  "updateContentCommand": "if [ -z $(ls -d */ | grep -v .devcontainer ]; then \n mv .devcontainer .. && git clone https://github.com/dleeftink/observable-node-codespace.git . && rm -rf .devcontainer && git clean -f -f &&  mv ../.devcontainer . && exit  0 \nfi",
-//"updateContentCommand" : "source_dir=\"$PWD\" && \\\n target_dir=\"/tmp/ldf_dir\" && \\\n mkdir -p \"$target_dir\" && \\\n mv \"$source_dir\"/{,.}* \"$target_dir\" 2>/dev/null ; \\\n git clone https://github.com/dleeftink/observable-node-codespace.git \"$source_dir\"/. && \\\n rm -rf .devcontainer ; \\\n mv \"$target_dir\"/{,.}* \"$source_dir\" 2>/dev/null ; \\\n rmdir \"$target_dir\"",
+  "updateContentCommand": "if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ];  then \n mv .devcontainer .. && git clone \"$target_repo\" . && rm -rf .devcontainer && git clean -f -f &&  mv ../.devcontainer . && exit  0 \n else \n echo Contents available && exit 0 \n fi",
   "waitFor": "updateContentCommand",
   "postCreateCommand": "npm install",
   "postAttachCommand": {
-    "server": "code -r -g basic-template/docs/index.md:1 && npm run obs"
+    "server": "code -r -g basic-template/docs/index.md:1 && npm run obs" // make .vscode > launch.json available via repo
   },
   "customizations": {
-    "codespaces": {
-      "openFiles": [
-        "basic-template/docs/index.md"
-      ]
-    },
     "vscode": {
       "extensions": [
         "ms-azuretools.vscode-docker"
       ]
     }
   }
-// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-// "remoteUser": "root"
 }
