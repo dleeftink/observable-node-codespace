@@ -1,3 +1,4 @@
+// curl endpoint for Dockerhub hosted devcontainer:
 // mkdir .devcontainer && curl https://raw.githubusercontent.com/dleeftink/observable-node-codespace/main/.devcontainer/remote.jsonc > .devcontainer/devcontainer.json
 
 {
