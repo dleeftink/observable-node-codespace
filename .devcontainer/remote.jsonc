@@ -2,7 +2,7 @@
 
 {
   "name": "Observable Framework remote image",
-  "image": "suptext/observable-node-image:0.1.2",
+  "image": "suptext/observable-node-image:0.2.0",
 
   "forwardPorts": [
     3000
