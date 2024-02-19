@@ -1,47 +1,26 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
-// https://containers.dev/implementors/json_reference/
-// https://blog.siliconvalve.com/posts/2023/08/08/using-dev-containers-to-build-a-transportable-blog-writing-environment
-// https://code.visualstudio.com/remote/advancedcontainers/start-processes
-// https://github.com/orgs/community/discussions/9644#discussioncomment-2702122 | setting custom start-up message
-// https://github.com/orgs/community/discussions/43534 | custom start-up message
-// https://github.com/orgs/community/discussions/4068 | default public ports
-
 {
-	
-	"name": "Node.js",
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
-	"features": {
-		"ghcr.io/devcontainers-contrib/features/jshint:2": {}
-	},
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	"portsAttributes": {
-		"3000": {
-		  "label": "Live preview",
-		  "onAutoForward": "openPreview"
-		}
-	  },
-
-	"forwardPorts": [3000],
-
-	"onCreateCommand": "sudo cp .devcontainer/welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
-	//"waitFor": "onCreateCommand",
-	"updateContentCommand": "npm install",
-	// "postCreateCommand": "cd basic-template && npm install",
-	"postAttachCommand": {
-	  "server": "npm run obs"
-	},
-	
-	"customizations": {
-		"codespaces": {
-		  "openFiles": ["basic-template/docs/index.md"]
-		}
-	}
-	
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
-
+  "name": "Observable Framework Alpine Node",
+  "image": "mcr.microsoft.com/devcontainers/base:alpine-3.19",
+  "features": {
+    "ghcr.io/cirolosapio/devcontainers-features/alpine-node:0": {}
+  },
+  "remoteEnv": {
+    "target_repo": "https://github.com/dleeftink/observable-node-codespace.git"
+  },
+  "forwardPorts": [
+    3000
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "Live preview",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "onCreateCommand": "echo 'Please wait for live pane ...' | sudo tee /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
+  "updateContentCommand": "if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ];  then \n mv .devcontainer .. && git clone \"$target_repo\" . && rm -rf .devcontainer && git clean -f -f &&  mv ../.devcontainer . && exit  0 \n else \n echo Contents available && exit 0 \n fi",
+  "waitFor": "updateContentCommand",
+  "postCreateCommand": "npm install",
+  "postAttachCommand": {
+    "server": "code -r -g basic-template/docs/index.md:1 && npm run obs"
+  }
 }
