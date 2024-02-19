@@ -1,16 +1,20 @@
 {
-  "name": "Light Node",
+  "name": "Observable Framework Alpine Node,
   "image": "mcr.microsoft.com/devcontainers/base:alpine-3.19",
+
   "features": {
     "ghcr.io/cirolosapio/devcontainers-features/alpine-node:0": {
-      "globalPackages": "@devcontainers/cli"
+      "globalPackages": "@devcontainers/cli" // remove in prod
     },
-    "ghcr.io/cirolosapio/devcontainers-features/alpine-docker-outside-of-docker:0": {}
+    "ghcr.io/cirolosapio/devcontainers-features/alpine-docker-outside-of-docker:0": {} // remove in prod
   },
+
   "remoteUser": "root", // run as root when creating image in case of d-o-d
+
   "remoteEnv": {
     "target_repo": "https://github.com/dleeftink/observable-node-codespace.git"
   },
+
   "forwardPorts": [
     3000
   ],
@@ -20,13 +24,23 @@
       "onAutoForward": "openPreview"
     }
   },
+
   "onCreateCommand": "echo 'Please wait for live pane ...' | sudo tee /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
+
+  // Check if .devcontainer is the only folder, and if so, 
+  // temporarily move the .devcontainer folders out of the way 
+  // and clone template repository to root. Else assume contents
+  // are available.
+
   "updateContentCommand": "if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ];  then \n mv .devcontainer .. && git clone \"$target_repo\" . && rm -rf .devcontainer && git clean -f -f &&  mv ../.devcontainer . && exit  0 \n else \n echo Contents available && exit 0 \n fi",
+
   "waitFor": "updateContentCommand",
   "postCreateCommand": "npm install",
+
   "postAttachCommand": {
     "server": "code -r -g basic-template/docs/index.md:1 && npm run obs" // make .vscode > launch.json available via repo
   },
+
   "customizations": {
     "vscode": {
       "extensions": [
@@ -34,4 +48,5 @@
       ]
     }
   }
+
 }
