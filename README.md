@@ -1,6 +1,6 @@
 # Observable Codespaces starter
 
-This repository contains the basic prerequisites to get started with Observable Framework on Github Codespaces (Alpine Linx + Node).
+This repository contains the basic prerequisites to get started with Observable Framework on Github Codespaces (Alpine Linux + Node).
 
 1. Sign in to your GitHub account.
 2. Open https://github.com/dleeftink/observable-node-codespace (this repo) in your browser.
