@@ -20,8 +20,9 @@ automatically open `index.md` to the left and a preview pane to the right.
 You can edit the `index.md` contents, after which the content changes are reflected (with a slight delay) in the preview pane.
 
 If updates stop being reflected in the preview pane, refresh the page. If updates aren't propagated after refreshing, execute `CTRL/CMD + C` in the terminal after which you can restart the live server using `npm run obs`.
-- If you accidentally close the preview pane, you can re-open this by navigating to the `Ports` tab on the bottom half of the screen and hovering the `Forwarded Address`. Click the `Preview in Editor` icon that shows on hover to re-open the preview inside your codespace.
-- For more information on getting started, visit the [Observable Framework Documentation](https://observablehq.com/framework/getting-started).
+- If you accidentally close the preview pane, you can re-open this by navigating to the `Ports` tab on the bottom half of the screen and hovering the `Forwarded Address` item. Click the `Preview in Editor` icon that shows on hover to re-open the live preview inside your codespace.
+
+> For more information on getting started, visit the [Observable Framework Documentation](https://observablehq.com/framework/getting-started).
 
 ## Create a new dashboard
 
