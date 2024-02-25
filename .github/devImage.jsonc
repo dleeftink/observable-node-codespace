@@ -45,7 +45,8 @@
   // and clone template repository to root. Else assume contents
   // are available.
 
-  "updateContentCommand": "if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ];  then \n mv .devcontainer .. && git clone \"$target_repo\" . && rm -rf .devcontainer && git clean -f -f &&  mv ../.devcontainer . && exit  0 \n else \n echo Contents available && exit 0 \n fi",
+  // "updateContentCommand": "if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ];  then \n mv .devcontainer .. && git clone \"$target_repo\" . && rm -rf .devcontainer && git clean -f -f &&  mv ../.devcontainer . && exit  0 \n else \n echo Contents available && exit 0 \n fi",
+  "updateContentCommand": "if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ];  then \n temp_dev=$(mktemp -d) \n mv .devcontainer \"$temp_dev\" \n git clone \"$target_repo\" . \n rm -rf .devcontainer \n git clean -f -f \n mv \"$temp_dev/.devcontainer\" . \n rm -rf \"$temp_dev/.devcontainer\" \n exit  0 \n else \n echo Contents available && exit 0 \n fi",
 
   // Additional postinstall commands are execute via package.json
 
