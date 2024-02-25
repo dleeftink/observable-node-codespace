@@ -12,7 +12,7 @@
 // When inlining bash scripts in json, always consider double escape \\\n vs single new line \n
 
 {
-  "name": "Observable Framework Alpine Node,
+  "name": "Observable Framework Alpine Node",
   "image": "mcr.microsoft.com/devcontainers/base:alpine-3.19",
 
   "features": {
