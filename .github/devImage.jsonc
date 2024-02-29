@@ -10,6 +10,7 @@
 // ~/.vscode-remote/data/Machine/settings.json
 
 // When inlining bash scripts in json, always consider double escape \\\n vs single new line \n
+// https://github.com/docker/for-win/issues/8479
 
 {
   "name": "Observable Framework Alpine Node",
