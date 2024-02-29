@@ -16,6 +16,9 @@
 // https://archive.is/eqJVz
 // https://learn.microsoft.com/en-us/windows/wsl/wsl-config -> swapDisk location
 
+// CMD entry point:
+// https://serverfault.com/questions/594281/how-can-i-override-cmd-when-running-a-docker-image
+
 {
   "name": "Observable Framework Alpine Node",
   "image": "mcr.microsoft.com/devcontainers/base:alpine-3.19",
