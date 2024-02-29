@@ -14,6 +14,7 @@
 // WSL2 <-> Linux file system inotify
 // https://github.com/docker/for-win/issues/8479
 // https://archive.is/eqJVz
+// https://learn.microsoft.com/en-us/windows/wsl/wsl-config -> swapDisk location
 
 {
   "name": "Observable Framework Alpine Node",
