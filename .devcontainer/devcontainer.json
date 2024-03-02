@@ -19,7 +19,8 @@
     }
   },
   "onCreateCommand": "echo 'Please wait for live pane ...' | sudo tee /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
-  "updateContentCommand": "if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ];  then \n mv .devcontainer .. && git clone \"$target_repo\" . && rm -rf .devcontainer && git clean -f -f &&  mv ../.devcontainer . && exit  0 \n else \n echo Contents available && exit 0 \n fi",
+  "updateContentCommand": "if [ $(find . -maxdepth  1 -type d ! -name . ! -name .devcontainer | wc -l) -eq 0 ];  then \n temp_dev=$(mktemp -d) \n mv .devcontainer \"$temp_dev\" \n git clone \"$target_repo\" . \n rm -rf .devcontainer \n git clean -f -f \n mv \"$temp_dev/.devcontainer\" . \n rm -rf \"$temp_dev/.devcontainer\" \n exit  0 \n else \n echo Contents available && exit 0 \n fi",
+
   "waitFor": "updateContentCommand",
   "postCreateCommand": "npm install",
   "postAttachCommand": {
